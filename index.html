@@ -40,7 +40,7 @@
     <!-- 大頭貼 + 姓名區 -->
     <div class="flex flex-col max-xl:flex-row items-center max-sm:w-full max-sm:justify-center">
         <img src="./img/anita.JPG" alt="Anita Chen"
-            class="rounded-full w-[150px] h-[150px] max-xl:w-[100px] max-xl:h-[100px] max-sm:w-[60px] max-sm:h-[60px]">
+            class="rounded-full shadow-md w-[150px] h-[150px] max-xl:w-[100px] max-xl:h-[100px] max-sm:w-[60px] max-sm:h-[60px] hover:scale-105">
         <div class="mt-[20px] flex flex-col items-center max-xl:items-start max-xl:mt-0 max-xl:ml-5 ">
             <span class="text-[26px] max-sm:text-2xl font-bold text-main">陳紀先 Anita</span>
             <p class="max-sm:text-lg mt-5 max-xl:mt-2 max-sm:mt-0">@aniani0318</p>
@@ -51,21 +51,21 @@
     <div class="w-[150px] flex justify-between items-center flex-row max-sm:w-[120px] max-sm:mt-2">
         <!-- Email -->
         <a href="mailto:obsessed527@gmail.com" target="_blank" class="text-textgrey hover:text-highlight transition-all">
-            <i class="fa-solid fa-envelope text-[28px] max-sm:text-[18px]"></i>
+            <i class="fa-solid fa-envelope text-[28px] max-sm:text-[20px]"></i>
         </a>
         <!-- 電話 -->
         <a href="tel:+886988318987" class="text-textgrey hover:text-highlight transition-all">
-            <i class="fa-solid fa-phone text-[28px] max-sm:text-[18px]"></i>
+            <i class="fa-solid fa-phone text-[28px] max-sm:text-[20px]"></i>
         </a>
         <!-- 'line' -->
         <a href="https://line.me/ti/p/lHUAQ7Sfmo" target="_blank"
             class="text-textgrey hover:text-highlight transition-all">
-            <i class="fa-brands fa-line text-[28px] max-sm:text-[18px]"></i>
+            <i class="fa-brands fa-line text-[28px] max-sm:text-[20px]"></i>
         </a>
     </div>
 
     <!-- 導覽列 -->
-    <ul class="hidden flex flex-col justify-center max-xl:flex-row max-sm:flex-col max-sm:items-center">
+    <!-- <ul class="hidden flex flex-col justify-center max-xl:flex-row max-sm:flex-col max-sm:items-center">
         <li class="mb-[12px]"><a href="#section1"
                 class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">About
                 Me</a></li>
@@ -78,7 +78,7 @@
         <li class=""><a href="#section4"
                 class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">Contact</a>
         </li>
-    </ul>
+    </ul> -->
 </header>
 
 
@@ -110,7 +110,7 @@
                             多次活動文宣與資訊懶人包的設計經驗，並持續進修學習UI/UX與網頁前端設計，深入使用者體驗最佳化。
                         </p>
                     </div>
-                    <div class="hidden text-[20px] max-md:text-[16px] mb-[40px] italic text-highlight space-x-4">
+                    <!-- <div class="hidden text-[20px] max-md:text-[16px] mb-[40px] italic text-highlight space-x-4">
                         <span
                             class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#專案管理</span>
                         <span
@@ -121,7 +121,7 @@
                             class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#UIUX設計</span>
                         <span
                             class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#RWD切版</span>
-                    </div>
+                    </div> -->
                     <a href="https://drive.google.com/drive/folders/1pm6C2hW76gwsYRkz_VBPy7jEuAUGDUOo?usp=sharing"
                         target="_blank"
                         class="m-auto w-[200px] h-[50px] max-md:w-[150px] max-md:h-[40px] flex justify-center items-center text-[20px] max-md:text-[16px] border-2 text-shine font-bold border-highlight bg-highlight rounded-lg hover:bg-transparent hover:text-highlight">
@@ -375,33 +375,53 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
-
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".nav-link");
-
-            sections.forEach((section, index) => {
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: "top 50%",  // 當區段的頂部到達視口中間時觸發
-                    end: "bottom 50%",
-                    onEnter: () => setActiveLink(index),
-                    onEnterBack: () => setActiveLink(index),
-                });
+    
+            // 滑入動畫 (About Me)
+            gsap.from("#section1", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#section1",
+                    start: "top 70%", // 當區塊進入視口 70% 處時觸發
+                    toggleActions: "play none none reverse",
+                }
             });
-
-            function setActiveLink(index) {
-                navLinks.forEach((link, i) => {
-                    if (i === index) {
-                        link.classList.add("border-highlight");
-                        link.classList.add("text-highlight");
-                    } else {
-                        link.classList.remove("border-highlight");
-                        link.classList.remove("text-highlight");
+    
+            // Skills & Portfolio 區塊 (浮現)
+            gsap.utils.toArray(["#section2", "#section3"]).forEach(section => {
+                gsap.from(section, {
+                    y: 80,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 75%",
+                        toggleActions: "play none none reverse",
                     }
                 });
-            }
+            });
+    
+            // 作品集卡片動畫 (單個浮現)
+            gsap.utils.toArray("#section3 .w-full > div").forEach((card, index) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: index * 0.2, // 依序出現
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse",
+                    }
+                });
+            });
         });
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
