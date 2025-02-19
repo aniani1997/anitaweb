@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳紀先 Anita Chen</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        main: '#745237',
+                        second: '#D5DEE6',
+                        third: '#CFC7BD',
+                        shine: '#fdfaf7',
+                        highlight: '#809BA8',
+                        textgrey: '#464A4E',
+                        textblue: '#1F3A68',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="p-0 w-full flex max-xl:flex-col text-textgrey">
+    <header
+    class="z-10 fixed text-xl w-[20%] h-screen max-xl:w-full max-xl:h-auto flex flex-col max-xl:flex-row max-sm:flex-col items-center justify-between max-sm:items-center bg-third py-[100px] max-xl:py-[25px] px-[50px] max-xl:px-[100px] max-md:px-[50px]">
+    
+    <!-- 大頭貼 + 姓名區 -->
+    <div class="flex flex-col max-xl:flex-row items-center max-sm:w-full max-sm:justify-center">
+        <img src="./img/anita.JPG" alt="Anita Chen"
+            class="rounded-full w-[150px] h-[150px] max-xl:w-[100px] max-xl:h-[100px] max-sm:w-[60px] max-sm:h-[60px]">
+        <div class="mt-[20px] flex flex-col items-center max-xl:items-start max-xl:mt-0 max-xl:ml-5 ">
+            <span class="text-[26px] max-sm:text-2xl font-bold text-main">陳紀先 Anita</span>
+            <p class="max-sm:text-lg mt-5 max-xl:mt-2 max-sm:mt-0">@aniani0318</p>
+        </div>
+    </div>
+
+    <!-- 聯絡方式圖示 -->
+    <div class="w-[150px] flex justify-between items-center flex-row max-sm:w-[120px] max-sm:mt-2">
+        <!-- Email -->
+        <a href="mailto:obsessed527@gmail.com" target="_blank" class="text-textgrey hover:text-highlight transition-all">
+            <i class="fa-solid fa-envelope text-[28px] max-sm:text-[18px]"></i>
+        </a>
+        <!-- 電話 -->
+        <a href="tel:+886988318987" class="text-textgrey hover:text-highlight transition-all">
+            <i class="fa-solid fa-phone text-[28px] max-sm:text-[18px]"></i>
+        </a>
+        <!-- 'line' -->
+        <a href="https://line.me/ti/p/lHUAQ7Sfmo" target="_blank"
+            class="text-textgrey hover:text-highlight transition-all">
+            <i class="fa-brands fa-line text-[28px] max-sm:text-[18px]"></i>
+        </a>
+    </div>
+
+    <!-- 導覽列 -->
+    <ul class="hidden flex flex-col justify-center max-xl:flex-row max-sm:flex-col max-sm:items-center">
+        <li class="mb-[12px]"><a href="#section1"
+                class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">About
+                Me</a></li>
+        <li class="mb-[12px]"><a href="#section2"
+                class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">Skills</a>
+        </li>
+        <li class="mb-[12px]"><a href="#section3"
+                class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">Portfolio</a>
+        </li>
+        <li class=""><a href="#section4"
+                class="nav-link text-textgrey hover:text-highlight pb-[2px] border-b-2 border-transparent transition-all">Contact</a>
+        </li>
+    </ul>
+</header>
+
+
+    <main
+        class="grow ml-[20%] px-[180px] max-xl:px-[100px] max-md:px-[50px] pt-[100px] pb-[20px] max-sm:py-[60px] max-xl:ml-0 max-xl:mt-[150px] max-sm:mt-[146px] ">
+        <div class="space-y-40 max-md:space-y-20 mb-[120px] max-sm:mb-[60px]">
+            <!-- 關於我 -->
+            <section id="section1" class="h-auto flex flex-col ">
+                <div class="w-full h-full flex flex-col m-auto text-[24px] max-md:text-lg">
+                    <span
+                        class="text-[80px] max-md:text-[40px]  font-bold uppercase text-highlight mb-[40px] max-md:mb-[20px]">
+                        About
+                        <span class="text-main">Me</span>
+                    </span>
+                    <div class="leading-[48px] max-md:hidden mb-[40px]">
+                        <p>
+                            畢業於國立師範大學科技應用與人力資源發展學系，過去有五年教育產業工作經驗，曾擔任科技部計畫助理與全英學程專案助理，負責計畫執行、經費核銷、大型活動籌備與招生宣傳。
+                            強化活動策劃與應變能力，以及跨部門溝通技巧。
+                        </p>
+                        <p>
+                            多次參與文宣與資訊懶人包設計，並持續進修學習UI/UX與網頁前端設計，深入使用者體驗優化。活動經驗讓我深刻體會專案管理的重要性，進而取得PMA、APMA與CPMS專案管理證照，系統化學習專案管理知識與案例。
+                        </p>
+                    </div>
+                    <div class="hidden max-md:block leading-[28px] mb-[40px]">
+                        <p>
+                            畢業於國立師範大學科技應用與人力資源發展學系，過去有五年教育產業工作經驗，曾擔任科技部計畫助理與全英學程專案助理，負責計畫執行、經費核銷、大型活動籌備與招生宣傳。
+                        </p>
+                        <p>
+                            多次活動文宣與資訊懶人包的設計經驗，並持續進修學習UI/UX與網頁前端設計，深入使用者體驗最佳化。
+                        </p>
+                    </div>
+                    <div class="hidden text-[20px] max-md:text-[16px] mb-[40px] italic text-highlight space-x-4">
+                        <span
+                            class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#專案管理</span>
+                        <span
+                            class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#外語能力</span>
+                        <span
+                            class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#團隊協作</span>
+                        <span
+                            class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#UIUX設計</span>
+                        <span
+                            class="underline underline-offset-4 transition-transform duration-300 hover:scale-110 inline-block">#RWD切版</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1pm6C2hW76gwsYRkz_VBPy7jEuAUGDUOo?usp=sharing"
+                        target="_blank"
+                        class="m-auto w-[200px] h-[50px] max-md:w-[150px] max-md:h-[40px] flex justify-center items-center text-[20px] max-md:text-[16px] border-2 text-shine font-bold border-highlight bg-highlight rounded-lg hover:bg-transparent hover:text-highlight">
+                        完整履歷
+                    </a>
+                </div>
+            </section>
+            <!-- 技能區塊 -->
+            <section id="section2" class="">
+                <div class="max-w-6xl mx-auto text-right ">
+                    <h2
+                        class="text-[80px] max-md:text-[40px] font-bold uppercase text-highlight mb-[40px] max-md:mb-[20px]">
+                        <span class="text-main ">Skills</span>
+                    </h2>
+
+                    <!-- 技能類別 -->
+                    <div class="grid grid-cols-2 max-md:grid-cols-1 gap-8 max-md:gap-4">
+
+                        <!-- 團隊協作 -->
+                        <div
+                            class="bg-second p-8 max-md:px-2 max-md:py-4 rounded-lg shadow-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                            <i class="fa-solid fa-users-gear text-[40px] max-md:text-[30px] py-4 max-md:py-2"
+                                style="color: #1F3A68;"></i>
+                            <h3
+                                class="text-2xl max-md:text-xl max-md:text-xl font-semibold text-textblue mt-4 max-md:mt-2 mb-2">
+                                團隊協作</h3>
+                            <p class="text-lg max-md:text-base">專案管理 | APMA、CPMS證照</p>
+                            <p class="text-lg max-md:text-base">溝通協作 ・ 跨部門合作</p>
+
+                        </div>
+
+                        <!-- 介面開發 -->
+                        <div
+                            class="bg-second p-8 max-md:px-2 max-md:py-4 rounded-lg shadow-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                            <i class="fa-solid fa-object-group text-[40px] max-md:text-[30px] py-4 max-md:py-2"
+                                style="color: #1F3A68;"></i>
+                            <h3 class="text-2xl max-md:text-xl font-semibold text-textblue mt-4 max-md:mt-2 mb-2">介面開發
+                            </h3>
+                            <p class="text-lg max-md:text-base">UI/UX | Figma</p>
+                            <p class="text-lg max-md:text-base">HTML/CSS | RWD・Tailwind</p>
+                        </div>
+
+                        <!-- 語言能力 -->
+                        <div
+                            class="bg-second p-8 max-md:px-2 max-md:py-4 rounded-lg shadow-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                            <i class="fa-solid fa-earth-americas text-[40px] max-md:text-[30px] py-4 max-md:py-2"
+                                style="color: #1F3A68;"></i>
+                            <h3 class="text-2xl max-md:text-xl font-semibold text-textblue mt-4 max-md:mt-2 mb-2">語言能力
+                            </h3>
+                            <p class="text-lg max-md:text-base">英語 | TOEIC 金色證書</p>
+                            <p class="text-lg max-md:text-base">韓語 | TOPIK 4</p>
+                        </div>
+
+                        <!-- 辦公應用 -->
+                        <div
+                            class="bg-second p-8 max-md:px-2 max-md:py-4 rounded-lg shadow-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+                            <i class="fa-solid fa-briefcase text-[40px] max-md:text-[30px] py-4 max-md:py-2"
+                                style="color: #1F3A68;"></i>
+                            <h3 class="text-2xl max-md:text-xl font-semibold text-textblue mt-4 max-md:mt-2 mb-2">辦公應用
+                            </h3>
+                            <p class="text-lg max-md:text-base">微軟Office | Word・Excel・PPT</p>
+                            <p class="text-lg max-md:text-base">Canva ・ Notion</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 作品集 -->
+            <section id="section3" class="flex flex-col items-center">
+                <span
+                    class="text-[80px] max-md:text-[40px] font-bold uppercase text-highlight mb-[80px] max-md:mb-[40px]">
+                    Portfolio
+                </span>
+                <!-- 作品集卡片 -->
+                <div class="w-full flex flex-wrap gap-[20px] max-md:gap-4">
+                    <!-- 台中客運 -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://fcu-11309-taichungbus.dev-hub.io/" target="_blank">
+                            <img class="rounded-t-lg" src="/img/bus.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    台中客運官方網站優化專題</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://fcu-11309-taichungbus.dev-hub.io/" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 國漫館 -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://www.figma.com/proto/bmgzSerJCV5357FPo74382/%E5%9C%8B%E6%BC%AB%E9%A4%A8%E5%88%87%E7%89%88?page-id=0%3A1&node-id=608-4302&node-type=canvas&viewport=4365%2C2371%2C0.11&t=bnwIpHOsXfzXfZ3O-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=608%3A4302" target="_blank">
+                            <img class="rounded-t-lg" src="/img/comic.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    國漫館導覽介面設計專題</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://www.figma.com/proto/bmgzSerJCV5357FPo74382/%E5%9C%8B%E6%BC%AB%E9%A4%A8%E5%88%87%E7%89%88?page-id=0%3A1&node-id=608-4302&node-type=canvas&viewport=4365%2C2371%2C0.11&t=bnwIpHOsXfzXfZ3O-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=608%3A4302" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- microsoft -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://aniani1997.github.io/Microsoft-website/" target="_blank">
+                            <img class="rounded-t-lg" src="/img/microsoft.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    微軟網站切版練習</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://aniani1997.github.io/Microsoft-website/" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- running -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://andy70283.github.io/Frame" target="_blank">
+                            <img class="rounded-t-lg" src="/img/running.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    Running報名網站切版練習</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://andy70283.github.io/Frame" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 小精靈動畫練習 -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://aniani1997.github.io/Pacman-animation/" target="_blank">
+                            <img class="rounded-t-lg" src="/img/pacman.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    小精靈網頁動畫</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://aniani1997.github.io/Pacman-animation/" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Loading動畫練習 -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://aniani1997.github.io/Loading-page/" target="_blank">
+                            <img class="rounded-t-lg" src="/img/loading.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    Loading網頁動畫</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://aniani1997.github.io/Loading-page/" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 平面文宣設計 -->
+                    <div
+                        class="w-[calc((100%_-_40px)/3)] max-md:w-[calc((100%_-_20px)/2)] max-sm:w-full h-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <a href="https://drive.google.com/drive/folders/1Kg0sPTkaxGZ8M-i6HbpMrfO6WgLGAqT8?usp=sharing" target="_blank">
+                            <img class="rounded-t-lg" src="/img/poster.png" alt="" />
+                            <div class="p-5">
+                                <h5
+                                    class="min-h-[64px] max-md:min-h-[48px] mb-8 text-2xl max-md:text-xl font-bold tracking-tight">
+                                    活動海報文宣設計</h5>
+                                <!-- <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p> -->
+                                <a href="https://drive.google.com/drive/folders/1Kg0sPTkaxGZ8M-i6HbpMrfO6WgLGAqT8?usp=sharing" target="_blank"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-shine bg-main rounded-lg hover:bg-main/75 focus:ring-4 focus:outline-none focus:ring-second">
+                                    了解更多
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- 聯絡我 -->
+            <section id="section4" class="hidden h-screen flex items-center justify-center bg-red-100">
+                Contact
+            </section>
+        </div>
+        <div class="text-center max-xl:hidden">Copyright©Anita Chen</div>
+    </main>
+    <footer class="hidden max-xl:flex w-full h-[50px] bg-second items-center justify-center">
+        <div class="">Copyright©Anita Chen</div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            sections.forEach((section, index) => {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top 50%",  // 當區段的頂部到達視口中間時觸發
+                    end: "bottom 50%",
+                    onEnter: () => setActiveLink(index),
+                    onEnterBack: () => setActiveLink(index),
+                });
+            });
+
+            function setActiveLink(index) {
+                navLinks.forEach((link, i) => {
+                    if (i === index) {
+                        link.classList.add("border-highlight");
+                        link.classList.add("text-highlight");
+                    } else {
+                        link.classList.remove("border-highlight");
+                        link.classList.remove("text-highlight");
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
